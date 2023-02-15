@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task_3</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        .form {
+            width: 400px;
+            padding: 30px 10px 20px 30px;
+            margin: 0 auto;
+            background-color: #d4d4dd;
+            position: relative;
+        }
+
+        .slide{
+            width: 15px;
+            height: 15px;
+            background-color: #03a9f4;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        form input {
+            border: none;
+            padding: 10px 0 10px 30px;
+            color: #009688;
+            outline: none;
+            font-size: 17px;
+            border-radius: 0 10px;
+            z-index: 1;
+        }
+
+        .show {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 360px;
+            height: 40px;
+            border-radius: 0 10px;
+            box-shadow: 1px 1px 1px 1px #e3f6ff, 1px 1px 3px 2px #00b0ff;
+            background: transparent;
+            z-index: 0;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="form">
+        <div class="slide"></div>
+        <form action="">
+            <div class="show"></div>
+            <input id="inp1" type="text" name="UserName" placeholder="User Name">
+            <input id="inp2" type="email" name="Email" placeholder="Email">
+            <input id="inp3" type="password" name="Password" placeholder="Password">
+        </form>
+    </div>
+
+
+
+    <script src="jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#inp1").focus(function(){
+                $(".slide").animate({"left":"15px","top":"15px"},400).fadeOut(400);
+                $(".show").animate({"left":"30px","top":"30px"},800)
+                $(".show").fadeIn(1000)
+            })
+
+            $("#inp2").focus(function(){
+                $(".slide").animate({"left":"15px","top":"15px"},400).fadeOut(400);
+                $(".show").animate({"left":"30px","top":"80px"},800)
+                $(".show").fadeIn(1000)
+            })  
+             
+            $("#inp3").focus(function(){
+                $(".slide").animate({"left":"15px","top":"15px"},400).fadeOut(400);
+                $(".show").animate({"left":"30px","top":"130px"},800)
+                $(".show").fadeIn(1000)
+
+            }) 
+            
+        })
+    </script>
+</body>
+</html>
